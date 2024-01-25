@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import products from "../products";
 import { Col, Row, ListGroup, Image, Card, Button } from "react-bootstrap";
 import { Rating } from "../components";
+import axios from "axios";
 
 const ProductScreen = () => {
-  const params = useParams();
-  const product = products.find((p) => p._id === params.id);
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${id}`);
+      setProduct(data);
+      console.log(data);
+      console.log(data.length);
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (product.length === 0) {
+    return <div>Loading....</div>;
+  }
 
   return (
     <>
@@ -24,7 +39,7 @@ const ProductScreen = () => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={product.rating}
+                value={product?.rating}
                 text={`${product.numReviews} reviews`}
                 key={product._id}
               />
