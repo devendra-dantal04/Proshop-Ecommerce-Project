@@ -1,21 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Footer, Header } from "./components";
 import { Container } from "react-bootstrap";
-import {HomeScreen} from "./screens";
+import { HomeScreen, NotFound, ProductScreen } from "./screens";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <main>
-        <Container>
-          <HomeScreen />
-        </Container>
-      </main>
-      <Footer />
+      <Router>
+        <Header />
+        <main className="py-3">
+          <Container>
+            <Routes>
+              <Route path="/" element={<HomeScreen />} exact />
+              <Route path="/product/:id" element={<ProductScreen />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Container>
+        </main>
+        <Footer />
+      </Router>
     </>
   );
 }
