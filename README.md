@@ -1,8 +1,14 @@
-# React + Vite
+# Full Stack Ecommerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a comprehensive Full Stack e-commerce project built using React.js, Bootstrap, Node.js, and MongoDB. The project incorporates efficient state management through React-Redux, providing a seamless user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Responsive Design:** Utilizes Bootstrap for a responsive and mobile-friendly layout.
+- **Frontend:** Developed using React.js for a dynamic and interactive user interface.
+- **Backend:** Powered by Node.js, providing a robust and scalable server-side architecture.
+- **Database:** MongoDB is used as the database for storing and retrieving product information.
+- **State Management:** Implements React-Redux for efficient state management, ensuring a smooth and consistent user experience.
+- **Stripe Payment Gateway:** Implemented the payment gateway through Stripe for smooth transactions.
